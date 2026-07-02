@@ -124,6 +124,7 @@ PS D:\Git-command> git commit -m "my second commit"
 [main 5f60755] my second commit
  1 file changed, 1 insertion(+), 1 deletion(-)
 
+<----------PTR---------->
 #skipping the staging area and directly performing commit from working directory
 #command
 PS D:\Git-command> git commit -a -m "my third  commit"
@@ -163,6 +164,12 @@ Changes to be committed:
 PS D:\Git-command> git rm --cached cred.txt
 rm 'cred.txt'
 
+#command
+git rm cred.txt
+Note:
+Removes the file from Git tracking.
+Also deletes the file from your computer.
+
 output:
 PS D:\Git-command> git status
 On branch main
@@ -183,7 +190,7 @@ git branch -M main → Rename the current branch to main.
 
 <------connect your working directory to remote repository--->(connecting through ssh)
 Step:1
-#command (write the command and press Enter)
+#command (write the command "ssh-keygen -o" and press Enter)
 
 PS D:\Git-command> ssh-keygen -o
 Generating public/private ed25519 key pair.
@@ -251,7 +258,7 @@ BwvNrPqPJgYQ== sachincpp333@gmail.com
 step3:
 copy the key and then go to setting-->SSH and GPG key--> New SSH Key and create a key.
 
-Step 4:
+Step 4:(connect to remote repository)
 copy SSH code i.e, "git@github.com:callmepathak/git-service.git" say command
 
 and execute command "git remote add origin command"
@@ -259,7 +266,7 @@ and execute command "git remote add origin command"
 output:
 PS D:\Git-command> git remote add origin git@github.com:callmepathak/git-service.git
 
-step 5:
+step 5:(push the code to remote repository)
 PS D:\Git-command> git push -u origin main
                       or
 PS D:\Git-command> git push -u origin main --force
@@ -269,13 +276,15 @@ note:If the GitHub repository is new and you don't care about its existing conte
 If you want to keep both histories
 
 Pull first:(from remote repository)
+#command
 git pull origin main --allow-unrelated-histories
 
 Resolve any merge conflicts if they appear, commit the merge, then push:
 
+#command
 git push -u origin main
 
-<-----example after performing some chnage in file--------->
+<-----example after performing some change in file--------->
 output:
 
 step 1: adding to staging area
@@ -314,6 +323,20 @@ Option 2: Push an existing repository
 git remote add origin git@github.com:navinreddy20/git-course.git
 git branch -M main
 git push -u origin main
+
+<------------------------------------------------->
+
+<---------------PTR---------->
+| Command              | Purpose                                                                                   |
+| -------------------- | ----------------------------------------------------------------------------------------- |
+| `git init -b main`   | **Creates a new Git repository** and sets the **initial branch** to `main`.               |
+| `git branch -M main` | **Renames the current branch** to `main` (or forces the rename if `main` already exists). |
+<---------------------------->
+
+
+
+
+
 
 
 
