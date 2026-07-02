@@ -158,4 +158,110 @@ Changes to be committed:
         new file:   cred.txt
         modified:   first-project.txt
 
+<-----removing file from git and making it untracked. later you can delete it from your working Repository--------->
+#command
+PS D:\Git-command> git rm --cached cred.txt
+rm 'cred.txt'
+
+output:
+PS D:\Git-command> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    cred.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        cred.txt
+
+<---------points to remember---------->
+
+git init -b main → Use this when creating a brand-new project and 
+                   you want the default branch to be main.
+git branch -M main → Rename the current branch to main.
+
+
+<------connect your working directory to remote repository--->(connecting through ssh)
+Step:1
+#command (write the command and press Enter)
+
+PS D:\Git-command> ssh-keygen -o
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\91900/.ssh/id_ed25519): 
+C:\Users\91900/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+
+<------#----important------->
+Your identification has been saved in C:\Users\91900/.ssh/id_ed25519
+Your public key has been saved in C:\Users\91900/.ssh/id_ed25519.pub
+<------important--------?
+
+The key fingerprint is:
+SHA256:fk58RIJrh/wfaW+MZeku4/ZTS2lyp2+LR71Lib/5JF0 91900@LAPTOP-H6Q4K34F
+The key's randomart image is:
++--[ED25519 256]--+
+|                 |
+|         .       |
+|        . . .    |
+|       . o o     |
+|        S . .  .E|
+|       o + . o=B*|
+|        . = =BB=*|
+|         + +=oX*o|
+|          .ooB=XB|
++----[SHA256]-----+
+
+#Step2:
+go to the path [ Your public key has been saved in "C:\Users\91900/.ssh " ]
+and then list all the file present inside .shh and open "id_rsa.pub". this will give us the key
+
+output:
+PS D:\Git-command> cd C:\Users\91900\.ssh
+PS C:\Users\91900\.ssh> dir
+
+
+    Directory: C:\Users\91900\.ssh
+
+
+Mode                 LastWriteTime         Length Name                                              
+----                 -------------         ------ ----                                              
+-a----          7/2/2026  11:09 PM            411 id_ed25519                                        
+-a----          7/2/2026  11:09 PM            104 id_ed25519.pub                                    
+-a----         4/17/2026   9:43 PM           3389 id_rsa                                            
+-a----         4/17/2026   9:43 PM            749 id_rsa.pub                                        
+-a----         4/17/2026   9:55 PM            828 known_hosts                                       
+-a----         4/17/2026   9:54 PM             92 known_hosts.old                                   
+
+
+PS C:\Users\91900\.ssh> cat id_rsa.pub        
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJYdtrOXfdS0IAqp2h9luhl8HxBo8LDO7
+fZql04hpiywofHhs14Ao7Y1a4u8zLzyZ1fG0V8Gv29g19egekg++QcTG9GjKJ00tUAm4SsF
+Qkfu1/aCMpfOyqKt9Pv8XdoNRwGIO9Fgk5ge+DbUCeMxSubW2SNs7t5X1x90Hnfrzqcq7n8
+AcJ9yCMu+qy0KIzM7w5zmtCuRnkPA39yvDYTUNWV04SA107cVNFw3QBtrIMnACIaizmaF8l
+0d6AF7ny3yP096kxAOERzGzULjGaXds+Wqiou4Oc2iMk5nCHDVEPyWcxv34c9gGjsyneyMC
+yVa0fKqifsaqrbl4JVrHc88lizREfrhGksGiRyvZEFe9ZUBFuhk9ncH6+gf0s00PPQfol/H
+tbE/bjs8l1QiMuC0Dj+DF8yCghvGbH5QE1lR6UZbqRb6JfHhQXKd9sZGrW5/+0CTJjCQ6iZ
+/5gzVcwNMP+uMHPnuPqGnKs7bL00eGHAlk5G5RslsHHknZYQU7wOkiNtRhwUjZFBo5eWpj5
+QUGWonBlFuPPT6oJ+lemsVdxxscSTSz5rrOK68wXP2w9NVOJWM5V0oLUXhmn7UGJnAaazGd
+4iGRkZI7UXcJ2Q2chNIFpcPueT1nc41rGsXkORIDjQtIVfEplLubtueCvVI6CsN/0/HNE8n
+BwvNrPqPJgYQ== sachincpp333@gmail.com
+
+step3:
+copy the key and then go to setting-->SSH and GPG key--> New SSH Key and create a key.
+
+Step 4:
+copy SSH code i.e, "git@github.com:callmepathak/git-service.git" say command
+
+and execute command "git remote add origin command"
+
+output:
+PS D:\Git-command> git remote add origin git@github.com:callmepathak/git-service.git
+
+
+
+
+
+
 
