@@ -1,0 +1,161 @@
+C:\Users\91900>git --version
+
+git version 2.41.0.windows.1
+
+C:\Users\91900>git config
+
+usage: git config [<options>]
+
+verify global configuration
+C:\Users\91900>git config --global --list
+
+output:
+
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+user.email=sachincpp333@gmail.com
+user.name=callmepathak
+
+note:
+✅ Your global Git username is callmepathak.
+✅ Your global email is sachincpp333@gmail.com.
+
+These settings apply to all Git repositories on your computer unless a repository 
+overrides them with local settings.
+
+#set globally(name and email)
+
+git config --global user.name "Sachin Kumar"
+git config --global user.email "sachincpp333@gmail.com"
+
+#set for current repository
+
+git config user.name "Sachin Kumar"
+git config user.email "sachincpp333@gmail.com"
+
+#Verify configuration
+git config --global --get user.name
+git config --global --get user.email
+
+  # Or list all global Git configuration:
+  git config --global --list
+
+#check local repository setting
+ git config --local --list  
+
+#command
+git status
+
+note:
+git status is typically the first command developers run before adding,
+committing, pulling, or pushing changes because it provides a clear 
+snapshot of the repository's current state.
+
+<-------initializing project---->
+#command
+git init
+   or
+git init -b main
+
+#check default branch
+git config --global init.defaultBranch
+
+note:
+git init is the command used to initialize a new Git repository.
+
+Inside the .git folder
+
+After running:
+
+git init
+
+You'll have something like:
+
+.git/
+│── HEAD
+│── config
+│── description
+│── hooks/
+│── info/
+│── objects/
+│── refs/
+
+Some important files/directories:
+
+HEAD → Points to the current branch.
+config → Repository-specific Git configuration.
+objects/ → Stores all commits, files, and trees.
+refs/ → Stores branch and tag references.
+
+#stagging area file is tracked by git
+now add the file to stagging area
+
+PS D:\Git-command> git add first-project.txt
+
+note:
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+<----after staging area perform commit---->
+#command
+PS D:\Git-command> git commit -m "my first commit"
+
+output:
+[main (root-commit) c5209bd] my first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 first-project.txt
+
+<----check log----->
+#command
+PS D:\Git-command> git log
+
+output:
+commit c5209bdbecd731c304ae6f4371f611cd3acf0d7e (HEAD -> main)
+Author: callmepathak <sachincpp333@gmail.com>
+Date:   Thu Jul 2 19:26:40 2026 +0530
+
+    my first commit
+
+Note: whenever you perform any changes, first move the files to stagging area then perform commit.    
+PS D:\Git-command> git add first-project.txt
+PS D:\Git-command> git commit -m "my second commit"
+[main 5f60755] my second commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+#skipping the staging area and directly performing commit from working directory
+#command
+PS D:\Git-command> git commit -a -m "my third  commit"
+
+output:
+[main b8f3904] my third  commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+#command
+# See unstaged changes
+git diff
+
+# See staged changes
+git diff --staged
+
+# See all changes since the last commit
+git diff HEAD
+
+Note:
+it diff is used to see the exact changes made to your files. 
+It compares different versions of your code and shows what was
+ added, removed, or modified.
+
+#command
+PS D:\Git-command> git add . (adding all files to staging area)
+PS D:\Git-command> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   command.txt
+        new file:   cred.txt
+        modified:   first-project.txt
+
+
