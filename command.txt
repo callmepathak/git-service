@@ -475,6 +475,79 @@ Date: July 3, 2026
 
 Message:
 First stable release
+<--------------------------------------------------->
+
+#command
+git tag -a v1.1 -m "2nd  release" (create tag)
+git tag (show all tag)
+git show v1.0( show details of all the tag)
+git push origin v1.0/v1.1 (we have to push the tag also then only it will be visible to remote repository)
+ output:
+  PS D:\Git-command> git show v1.0
+  tag v1.0
+  Tagger: callmepathak <sachincpp333@gmail.com>
+  Date:   Fri Jul 3 03:19:07 2026 +0530
+
+output:
+PS D:\Git-command> git tag -a v1.1 -m "2nd  release"
+PS D:\Git-command> git tag
+v1.0
+v1.1
+PS D:\Git-command> git push origin v1.0
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 164 bytes | 164.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:callmepathak/git-service.git
+ * [new tag]         v1.0 -> v1.0
+PS D:\Git-command> git push origin v1.1
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 164 bytes | 164.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:callmepathak/git-service.git
+ * [new tag]         v1.1 -> v1.1
+
+ <------------------------------Git Clone------------------------------>
+ 1. Clone using HTTPS
+Command
+git clone https://github.com/<username>/<repository>.git
+Example
+git clone https://github.com/callmepathak/git-service.git
+What happens?
+GitHub Repository
+        │
+        ▼
+git clone (HTTPS)
+        │
+        ▼
+Creates a local copy of the repository
+Authentication
+Uses GitHub Username + Personal Access Token (PAT) when required.
+If your credentials are stored (e.g., by Git Credential Manager), you usually won't be prompted every time.
+
+2. Clone using SSH
+Command
+git clone git@github.com:<username>/<repository>.git
+Example
+git clone git@github.com:callmepathak/git-service.git
+What happens?
+GitHub Repository
+        │
+        ▼
+git clone (SSH)
+        │
+        ▼
+Creates a local copy of the repository
+Authentication
+Uses your SSH key pair.
+Your public key is added to GitHub.
+Your private key stays on your computer.
+No username or PAT is required after SSH is set up correctly.
+
+ <------------------------------Git Clone------------------------------>
+ 
+
 
 
 
