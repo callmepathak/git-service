@@ -275,6 +275,30 @@ Resolve any merge conflicts if they appear, commit the merge, then push:
 
 git push -u origin main
 
+<-----example after performing some chnage in file--------->
+output:
+
+step 1: adding to staging area
+PS D:\Git-command> git add .
+
+step 2: perform commit
+PS D:\Git-command> git commit -m "my seventh commit"
+[main db825c6] my seventh commit
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+Step 3:push to remote repository
+PS D:\Git-command> git push -u origin main          
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 514 bytes | 514.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.                                
+To github.com:callmepathak/git-service.git
+   2f702f3..db825c6  main -> main
+branch 'main' set up to track 'origin/main'.
+
 <-----------points to remember------------------>
 
 Option 1: Create a new repository on the command line
