@@ -264,7 +264,16 @@ PS D:\Git-command> git push -u origin main
                       or
 PS D:\Git-command> git push -u origin main --force
 note:If the GitHub repository is new and you don't care about its existing content, 
-     overwrite it.
+     overwrite it or If the GitHub repository only contains a README and you don't need it.
+                     or
+If you want to keep both histories
+
+Pull first:(from remote repository)
+git pull origin main --allow-unrelated-histories
+
+Resolve any merge conflicts if they appear, commit the merge, then push:
+
+git push -u origin main
 
 <-----------points to remember------------------>
 
