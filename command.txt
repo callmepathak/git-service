@@ -259,9 +259,109 @@ step3:
 copy the key and then go to setting-->SSH and GPG key--> New SSH Key and create a key.
 
 Step 4:(connect to remote repository)
-copy SSH code i.e, "git@github.com:callmepathak/git-service.git" say command
+copy SSH code i.e, "git@github.com:callmepathak/git-service.git" 
 
-and execute command "git remote add origin command"
+and execute command "git remote add origin git@github.com:callmepathak/git-service.git"
+
+Git stores:
+Remote Name : origin
+URL : git@github.com:callmepathak/git-service.git
+
+#command
+git remote -v
+
+shows:
+origin  git@github.com:callmepathak/git-service.git (fetch)
+origin  git@github.com:callmepathak/git-service.git (push)
+Note:
+Since you're both reading from and writing to the same repository, the URLs are identical.
+
+Can they be different?
+Yes.
+
+Remote Name : origin
+
+Fetch URL : git@github.com:company/project.git
+Push URL  : git@github.com:callmepathak/project.git
+
+Notice there is still only one remote, named origin.
+
+But Git allows changing only the Push URL
+
+For example:
+
+git remote add origin git@github.com:company/project.git
+
+Initially Git stores:
+
+Remote Name : origin
+
+Fetch URL : git@github.com:company/project.git
+Push URL  : git@github.com:company/project.git
+
+Now change only the push URL:
+
+git remote set-url --push origin git@github.com:callmepathak/project.git
+
+Now Git stores:
+
+Remote Name : origin
+
+Fetch URL : git@github.com:company/project.git
+Push URL  : git@github.com:callmepathak/project.git
+
+Notice there is still only one remote, named origin.
+
+When you run:
+
+git remote -v
+
+Git prints:
+
+origin  git@github.com:company/project.git (fetch)
+origin  git@github.com:callmepathak/project.git (push)
+
+It's still one remote (origin), but it stores two different URLs.
+
+Why is this useful?
+
+This is common in open-source development.
+
+Suppose you want to contribute to a project.
+
+You cannot push directly to the original repository because you don't have permission.
+
+Original Repository
+github.com/company/project
+
+You create your own fork:
+
+github.com/callmepathak/project
+
+Now you configure:
+
+origin
+
+Fetch URL : github.com/company/project
+Push URL  : github.com/callmepathak/project
+
+Workflow:
+
+git pull
+      │
+      ▼
+Company Repository
+
+git push
+      │
+      ▼
+Your Fork
+
+So:
+
+git pull gets the latest code from the company.
+git push sends your changes to your own fork.
+Later, you create a Pull Request from your fork to the company repository.
 
 output:
 PS D:\Git-command> git remote add origin git@github.com:callmepathak/git-service.git
@@ -332,6 +432,50 @@ git push -u origin main
 | `git init -b main`   | **Creates a new Git repository** and sets the **initial branch** to `main`.               |
 | `git branch -M main` | **Renames the current branch** to `main` (or forces the rename if `main` already exists). |
 <---------------------------->
+
+<-----------------Tag-------------------->
+Tag Type	Description:
+Lightweight Tag--->A simple pointer to a specific commit.
+Annotated Tag---->A full Git object that stores metadata such as the tagger, date, message, and can be GPG-signed.
+
+1. Lightweight Tag
+Think of it like a bookmark.
+It simply points to a commit.
+
+Create
+git tag v1.0
+Structure
+Commit A ---- Commit B ---- Commit C
+                              ↑
+                            v1.0
+
+It stores only the tag name and the commit reference.
+
+2. Annotated Tag (Recommended)
+
+This is the type most teams use for releases.
+
+Create
+git tag -a v1.0 -m "First stable release"
+
+It stores:
+Tag name
+Commit
+Tagger name
+Tagger email
+Date
+Message
+Optional GPG signature
+
+Example:
+
+Tag: v1.0
+Author: Sachin Kumar
+Date: July 3, 2026
+
+Message:
+First stable release
+
 
 
 
