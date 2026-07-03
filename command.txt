@@ -546,7 +546,42 @@ Your private key stays on your computer.
 No username or PAT is required after SSH is set up correctly.
 
  <------------------------------Git Clone------------------------------>
+
+ <-----------------------Branch-------------->
+#command
+git checkout -b feature1(create+switch)
+git switch -c feature1(create+switch)
+git branch
+output:
+PS D:\Git-command> git branch
+* feature1(current branch)
+  main
+
+Interview Summary Table:
+
+Operation	                            git switch	                         git checkout
+
+Switch to existing branch	         git switch main	                      git checkout main
+Create and switch branch	         git switch -c dev	                   git checkout -b dev
+Switch to previous branch	           git switch -	                          git checkout -
+Create from another branch	       git switch -c dev main	            git checkout -b dev main
+Create from a commit	           git switch -c dev <commit>	         git checkout -b dev <commit>
+Detached HEAD	                     git switch --detach <commit>	        git checkout <commit>
+Restore a file	                          ❌                         	git checkout -- file
+Restore all files	                        ❌	                              git checkout -- .
  
+PS D:\Git-command> git checkout -b feature1
+Switched to a new branch 'feature1'
+PS D:\Git-command> git branch
+* feature1
+  main
+PS D:\Git-command> git add .                     
+PS D:\Git-command> git commit -m "my 13th commit"
+[feature1 2f8282f] my 13th commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+  <-----------------------Branch-------------->
+
 
 
 
