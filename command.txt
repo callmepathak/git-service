@@ -596,6 +596,35 @@ PS D:\Git-command> git branch
   main
 
 
+#command
+git push origin feature1 (push the branch named feature1 to remote repository)
+
+output:
+PS D:\Git-command> git switch main       
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\Git-command> git add .                     
+PS D:\Git-command> git commit -m "my 15th commit"
+[main e83bb5b] my 15th commit
+ 1 file changed, 16 insertions(+)
+PS D:\Git-command> git switch feature1
+Switched to branch 'feature1'
+PS D:\Git-command> git push origin feature1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.                                 
+remote: 
+remote: Create a pull request for 'feature1' on GitHub by visiting:                                  
+remote:      https://github.com/callmepathak/git-service/pull/new/feature1                           
+remote: 
+To github.com:callmepathak/git-service.git
+ * [new branch]      feature1 -> feature1
+
+
   <-----------------------Branch-------------->
 
 
