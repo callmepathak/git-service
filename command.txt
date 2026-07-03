@@ -580,6 +580,22 @@ PS D:\Git-command> git commit -m "my 13th commit"
 [feature1 2f8282f] my 13th commit
  1 file changed, 3 insertions(+), 1 deletion(-)
 
+#command
+git branch -d feature2(delete the branch)
+note:before deleting the branch switch to other, otherwise you can not able to delete it.
+
+output:
+PS D:\Git-command> git branch -d feature2
+error: Cannot delete branch 'feature2' checked out at 'D:/Git-command'
+PS D:\Git-command> git switch feature1
+Switched to branch 'feature1'
+PS D:\Git-command> git branch -d feature2
+Deleted branch feature2 (was 56a1ed1).
+PS D:\Git-command> git branch
+* feature1
+  main
+
+
   <-----------------------Branch-------------->
 
 
