@@ -631,10 +631,16 @@ To github.com:callmepathak/git-service.git
   Suppose we have to merge feature1 to main then first come to main branch 
   before merging 1st perform the pull operation
 #command:
+git pull origin main
+
+output:
   PS D:\Git-command> git pull origin main
+From github.com:callmepathak/git-service
+ * branch            main       -> FETCH_HEAD
+Already up to date.
 
   and then run the below command:
-  
+
   PS D:\Git-command> git merge feature1 
 
     <------------merge--------------------------->
