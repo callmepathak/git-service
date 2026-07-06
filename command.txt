@@ -694,11 +694,12 @@ them without committing, so you can work on something else (like switching branc
  or pulling changes).
 
 #command
-git stash
-
-git stash list
-
-git stash apply
+git stash          # Save current changes
+git stash list     # Show all stashes
+git stash pop      # Restore and remove the latest stash
+git stash apply    # Restore but keep it in the stash list
+git stash drop     # Delete a specific stash
+git stash clear    # Delete all stashes
 
 output:
 PS D:\Git-command> git stash
@@ -714,6 +715,10 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 <--------------Stash------->
+
+<--------Fork------------>
+
+<--------Fork------------>
 
 
 
