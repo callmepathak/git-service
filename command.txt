@@ -247,7 +247,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJYdtrOXfdS0IAqp2h9luhl8HxBo8LDO7
 fZql04hpiywofHhs14Ao7Y1a4u8zLzyZ1fG0V8Gv29g19egekg++QcTG9GjKJ00tUAm4SsF
 Qkfu1/aCMpfOyqKt9Pv8XdoNRwGIO9Fgk5ge+DbUCeMxSubW2SNs7t5X1x90Hnfrzqcq7n8
 AcJ9yCMu+qy0KIzM7w5zmtCuRnkPA39yvDYTUNWV04SA107cVNFw3QBtrIMnACIaizmaF8l
-0d6AF7ny3yP096kxAOERzGzULjGaXds+Wqiou4Oc2iMk5nCHDVEPyWcxv34c9gGjsyneyMC
+0d6AF7ny3yP096kxAOERzGzULjGaXds+Wqiou4Oc2iMalcnclmncm cmcl4c9gGjsyneyMC
 yVa0fKqifsaqrbl4JVrHc88lizREfrhGksGiRyvZEFe9ZUBFuhk9ncH6+gf0s00PPQfol/H
 tbE/bjs8l1QiMuC0Dj+DF8yCghvGbH5QE1lR6UZbqRb6JfHhQXKd9sZGrW5/+0CTJjCQ6iZ
 /5gzVcwNMP+uMHPnuPqGnKs7bL00eGHAlk5G5RslsHHknZYQU7wOkiNtRhwUjZFBo5eWpj5
@@ -716,9 +716,25 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 <--------------Stash------->
 
-<--------Fork------------>
+<--------Fork and Pull Request------------>
 
-<--------Fork------------>
+Fork → Pull Request Workflow 
+
+1. Fork creates your own copy of someone else's GitHub repository, 
+so you can make changes without affecting the original project.
+2. You clone your fork, create a new branch, make changes, commit them,
+and push them to your fork.
+3. You then create a Pull Request (PR) to request that the original 
+repository (upstream) merge your changes.
+4. The project maintainer reviews your code, may request changes, or approve it 
+if everything looks good.
+5. Once approved, the maintainer merges the Pull Request, and your changes become
+ part of the original repository.
+
+Memory Trick
+Fork → Clone → Branch → Commit → Push → Pull Request → Review → Merge
+
+<--------Fork and Pull Request----------->
 
 
 
