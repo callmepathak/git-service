@@ -688,6 +688,34 @@ the commit becomes unreachable (dangling) and may eventually be deleted.
 using git switch -c <branch-name>.
 
 
+<--------------Stash------->
+You use git stash when you have unfinished changes but need to temporarily save 
+them without committing, so you can work on something else (like switching branches
+ or pulling changes).
+
+#command
+git stash
+
+git stash list
+
+git stash apply
+
+output:
+PS D:\Git-command> git stash
+Saved working directory and index state WIP on feature4: 996c819 6th july commit 5th
+PS D:\Git-command> git stash list
+stash@{0}: WIP on feature4: 996c819 6th july commit 5th
+PS D:\Git-command> git stash apply
+On branch feature4
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   UserService.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<--------------Stash------->
+
+
 
 
 
