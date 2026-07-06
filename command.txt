@@ -661,6 +661,32 @@ Already up to date.
 
 # git time travel
 
+| Command                        | Result                                     |
+| ------------------------------ | ------------------------------------------ |
+| git checkout <commit>          | Detached HEAD (older command)              |
+| git switch --detach <commit>   | Detached HEAD (newer, recommended command) |
+
+Git HEAD, Switch, Commit & Detached HEAD
+
+1.HEAD is Git's pointer to your current working branch (or directly to a commit in 
+detached mode).
+2. git switch <branch> moves HEAD from the current branch to the specified branch; 
+no new commit is created.
+3. git commit creates a new commit and moves the current branch forward;
+ since HEAD is attached to that branch, it automatically moves with it.
+4. Detached HEAD occurs when HEAD points directly to a commit instead of a branch 
+(e.g., git checkout <commit>). Any new commits are not part of a branch unless you create one.
+5. Memory Trick: Switch = HEAD changes branch, Commit = HEAD moves with the current branch, 
+Detached HEAD = HEAD points directly to a commit.
+
+Note:
+1. In Detached HEAD, commits are created normally, but no branch moves to them.
+2. The new commit is referenced only by HEAD.
+3. If you switch to another branch without creating a new branch, 
+the commit becomes unreachable (dangling) and may eventually be deleted.
+4. To keep the commit, create a new branch before leaving Detached HEAD 
+using git switch -c <branch-name>.
+
 
 
 
