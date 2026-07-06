@@ -643,7 +643,24 @@ Already up to date.
 
   PS D:\Git-command> git merge feature1 
 
+  and if we need that after merging no extra line will be visible then use rebase
+
+  #command
+  git rebase feature3 (merging feature3 branch to main branch)
+
+  ###### Merge Conflict ##########
+
+  A merge conflict occurs when Git cannot automatically merge changes because 
+  the same lines of the same file were modified in different branches. To resolve it,
+  identify the conflicted files, manually edit the code, remove the conflict markers,
+  stage the resolved files using git add, complete the merge with git commit, and finally
+  push the changes.
+
     <------------merge--------------------------->
+
+
+# git time travel
+
 
 
 
